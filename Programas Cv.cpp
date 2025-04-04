@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 using namespace std;
 
 //Verificar si es Primo o no 
@@ -16,7 +17,30 @@ int contarDigitos(string num) {
         return num.length() - 1; // Restamos 1 si hay un signo negativo
     }
     return num.length();
+};
+
+//contar las palabras de una frase .
+int contarPalabras(string frase){
+	stringstream ss(frase);
+	string palabra;
+	int contador = 0;
+	
+	while (ss>>palabra){
+		contador++;
+	}
+	return contador;
+};
+
+//Calcular el MCD de dos numeros
+int encontrarMCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
 }
+
 
 
 

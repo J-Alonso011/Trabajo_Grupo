@@ -6,7 +6,7 @@ using namespace std;
 
 bool esPrimo(int);
 int contarDigitos(string);
-
+int contarPalabras(string);
 //No tocar este Void es para esperar para regresar al menu 
 void esperarTecla() {
 	cout << "\n___________________________________";
@@ -22,9 +22,9 @@ main(){
 	do{
 		cout<<"\n Menu \n";
 		cout<<"17. Verificar si es Primo o no\n";
-		cout<<"18. contar los digitos de un numero\n";
-		cout<<"19. \n";
-		cout<<"20. \n";
+		cout<<"18. Contar los Digitos de un Numero\n";
+		cout<<"19. Contar las Palabras de una Frase\n";
+		cout<<"20. Calcular el MCD \n";
 		cout<<"21. Salir\n";
 		cout<<"Que necesitas el dia de Hoy?"<<endl;
 		cin>> opcion;
@@ -46,6 +46,27 @@ main(){
                 cin >> num;
                 cout << "El numero tiene " << contarDigitos(num) << " digitos.\n";
                 esperarTecla(); 
+				break;
+			}
+			case 19 : {
+				string frase;
+                cout << "Introduce una frase: ";
+                getline(cin, frase);
+                int cantidad = contarPalabras(frase);
+                cout << "La frase tiene " << cantidad << " palabra/s.\n";
+                esperarTecla();
+				break;
+			}
+			case 20 : {
+				int a, b;
+                cout << "Introduce el primer número: ";
+                cin >> a;
+                cout << "Introduce el segundo número: ";
+                cin >> b;
+
+                int resultado = encontrarMCD(a, b);
+                cout << "El MCD de " << a << " y " << b << " es: " << resultado << "\n";
+                esperarTecla();
 				break;
 			}
 		}

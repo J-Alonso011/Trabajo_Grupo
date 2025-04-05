@@ -7,6 +7,7 @@
 #include <cmath>
 #include "Programas Cv.cpp"
 #include "ProgramasJA.cpp"
+#include "Programa EC.cpp"
 using namespace std;
 
 bool esPrimo(int);
@@ -26,6 +27,10 @@ main(){
 	
 	do{
 		cout<<"\n Menu \n";
+		cout<<"1. Suma, Resta, Multiplicacion, division de dos numeros\n";
+		cout<<"2. Determinar si es par o impar\n";
+		cout<<"3. Conversor\n";
+		cout<<"4. Determinar si una palabra o un numero es palindromo\n";
 		cout<<"13. Crear figuras geometricas basicas\n";
 		cout<<"14. Mover un punto en toda la pantalla\n";
 		cout<<"15. Simulacion de un Cajero\n";
@@ -42,6 +47,38 @@ main(){
 		
 		switch (opcion){
 			
+			case 1:{
+				double num1, num2;
+                cout << "Ingresa el Primer Numero: ";
+                cin >> num1;
+                cout << "Ingresa el Segundo Numero: ";
+                cin >> num2;
+                Operaciones operaciones(num1, num2);
+                operaciones.suma();
+                operaciones.resta();
+                operaciones.multiplicacion();
+                operaciones.division();
+                esperarTecla();
+				break;
+			}
+			case 2:{			
+                ParImpar pi;
+                pi.verificarNumero();
+                esperarTecla();
+				break;
+			}
+			case 3:{
+                Conversor conversor;
+                conversor.realizarConversion();
+                esperarTecla();
+				break;
+			}
+			case 4:{
+                Palindromo p;
+                p.verificar();
+                esperarTecla();
+				break;
+			}
 			case 13:{
 			 cout << "Cuadrado:" << endl;
              cuadrado();

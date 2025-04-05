@@ -8,11 +8,16 @@
 #include "Programas Cv.cpp"
 #include "ProgramasJA.cpp"
 #include "Programa EC.cpp"
+#include "Programa PB.cpp"
+
+
 using namespace std;
 
 bool esPrimo(int);
 int contarDigitos(string);
 int contarPalabras(string);
+
+
 //No tocar este Void es para esperar para regresar al menu 
 void esperarTecla() {
 	cout << "\n___________________________________";
@@ -31,6 +36,10 @@ main(){
 		cout<<"2. Determinar si es par o impar\n";
 		cout<<"3. Conversor\n";
 		cout<<"4. Determinar si una palabra o un numero es palindromo\n";
+		cout<<"5. Convertir a numero romano (1 a 1000)\n";
+		cout<<"6. Convertir numero a letras enteros\n";
+		cout<<"7. Convertir numero a letras en decimal\n";
+		cout<<"8. Mostrar tabla de multiplicar\n";
 		cout<<"13. Crear figuras geometricas basicas\n";
 		cout<<"14. Mover un punto en toda la pantalla\n";
 		cout<<"15. Simulacion de un Cajero\n";
@@ -40,7 +49,7 @@ main(){
 		cout<<"19. Contar las Palabras de una Frase\n";
 		cout<<"20. Calcular el MCD \n";
 		cout<<"21. Salir\n";
-		cout<<"Que necesitas el dia de Hoy?"<<endl;
+		cout<<"¿Que necesitas el dia de Hoy?"<<endl;
 		cin>> opcion;
 		cin.ignore();
 		
@@ -76,6 +85,36 @@ main(){
 			case 4:{
                 Palindromo p;
                 p.verificar();
+                esperarTecla();
+				break;
+			}
+			case 5:{
+				Romanos r;
+                r.convertirARomano();
+                esperarTecla();
+                break;
+			}
+			case 6:{
+				NumeroEntero enteroConverter;
+                int numero;
+                cout << "Ingresa el numero entero: ";
+                cin >> numero;
+                cout << "En letras: " << enteroConverter.convertirEntero(numero) << endl;
+                esperarTecla();
+				break;
+			}
+			case 7:{
+				NumeroDecimal decimalConverter;
+                double numero;
+                cout << "Ingresa el numero decimal: ";
+                cin >> numero;
+                cout << "En letras: " << decimalConverter.convertirDecimal(numero) << endl;
+                esperarTecla();
+				break;
+			}
+			case 8:{	  
+    			TablaMultiplicar tm;
+                tm.mostrarTabla();
                 esperarTecla();
 				break;
 			}

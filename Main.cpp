@@ -9,6 +9,7 @@
 #include "ProgramasJA.cpp"
 #include "Programa EC.cpp"
 #include "Programa PB.cpp"
+#include "programas AB.cpp"
 
 
 using namespace std;
@@ -40,6 +41,10 @@ main(){
 		cout<<"6. Convertir numero a letras enteros\n";
 		cout<<"7. Convertir numero a letras en decimal\n";
 		cout<<"8. Mostrar tabla de multiplicar\n";
+		cout << "9. Mostrar todas las tablas de multiplicar del 1 al 10\n";
+        cout << "10. Mostrar multiplicacion manual\n";
+        cout << "11. Convertir decimal a binario\n";
+        cout << "12. Convertir decimal a hexadecimal\n";
 		cout<<"13. Crear figuras geometricas basicas\n";
 		cout<<"14. Mover un punto en toda la pantalla\n";
 		cout<<"15. Simulacion de un Cajero\n";
@@ -118,6 +123,26 @@ main(){
                 esperarTecla();
 				break;
 			}
+			case 9:
+            	TablasMultiplicar tablas;
+                tablas.mostrarTodas();
+                esperarTecla();
+                break;
+            case 10:
+            	MultiplicacionManual multiplicacion;
+                multiplicacion.mostrarMultiplicacion();
+                esperarTecla();
+                break;
+            case 11:
+            	ConversionBinario binario;
+                binario.convertir();
+                esperarTecla();
+                break;
+            case 12:
+            	ConversionHexadecimal hexadecimal;
+                hexadecimal.convertir();
+                esperarTecla();
+                break;
 			case 13:{
 			 cout << "Cuadrado:" << endl;
              cuadrado();
